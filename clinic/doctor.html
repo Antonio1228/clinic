@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor Dashboard</title>
+    <link rel="stylesheet" href="doctor_styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Welcome, Dr.
+            <?php echo htmlspecialchars($_SESSION['doctor_name']); ?>
+        </h1>
+    </header>
+    <main>
+        <div class="button-group">
+            <button onclick="location.href='view_appointments.php'">View Appointment Records</button>
+            <button onclick="location.href='update_profile.php'">Update Personal Information</button>
+            <button onclick="location.href='doctor_reviews.php'">View Reviews</button>
+            <button onclick="location.href='logout.php'">Logout</button>
+        </div>
+    </main>
+    <footer>
+        <p>Clinic Registration System © 2024</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>View Appointment Records</title>
+    <link rel="stylesheet" href="doctor_reviews.css">
+</head>
+
+<body>
+    <header>
+        <h1>Appointment Records</h1>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Patient ID</th>
+                    <th>Patient Name</th>
+                    <th>Clinic</th>
+                    <th>Appointment Time</th>
+                    <th>Symptoms</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($appointments as $appointment): ?>
+                <tr>
+                    <td>
+                        <?php echo htmlspecialchars($appointment['appointment_patient_id']); ?>
+                    </td>
+                    <td>
+                        <?php echo htmlspecialchars($appointment['patient_name']); ?>
+                    </td>
+                    <td>
+                        <?php echo htmlspecialchars($appointment['clinic_name']); ?>
+                    </td>
+                    <td>
+                        <?php echo htmlspecialchars($appointment['appointment_time']); ?>
+                    </td>
+                    <td>
+                        <?php echo htmlspecialchars($appointment['appointment_symptoms']); ?>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+        <button onclick="location.href='doctor.html';" class="action-button">Back to Dashboard</button>
+    </main>
+    <footer>
+        <p>Clinic Registration System © 2024</p>
+    </footer>
+</body>
+
+</html>

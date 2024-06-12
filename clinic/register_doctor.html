@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Register as Doctor</title>
+    <link rel="stylesheet" href="register_styles.css">
+    <script>
+        function validateForm() {
+            var password = document.getElementById("doctor_password").value;
+
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Register as Doctor</h1>
+    </header>
+    <form action="register_doctor.php" method="POST" class="form-container" onsubmit="return validateForm()">
+        <div class="input-group">
+            <label for="doctor_name">Full Name</label>
+            <input type="text" id="doctor_name" name="doctor_name" placeholder="Full Name" required>
+        </div>
+        <div class="input-group">
+            <label for="doctor_gender">Gender</label>
+            <select id="doctor_gender" name="doctor_gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="doctor_profession">Profession</label>
+            <input type="text" id="doctor_profession" name="doctor_profession" placeholder="Profession" required>
+        </div>
+        <div class="input-group">
+            <label for="clinic_id">Clinic ID</label>
+            <input type="text" id="clinic_id" name="clinic_id" placeholder="Clinic ID" required>
+        </div>
+        <div class="input-group">
+            <label for="doctor_password">Password</label>
+            <input type="password" id="doctor_password" name="doctor_password" placeholder="Password" required>
+        </div>
+        <button type="submit" class="register-button">Register</button>
+    </form>
+    <footer>
+        <p>Clinic Registration System © 2024</p>
+    </footer>
+</body>
+
+</html>

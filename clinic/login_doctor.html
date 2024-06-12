@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor Login</title>
+    <link rel="stylesheet" href="login_styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Doctor Login</h1>
+    </header>
+    <form action="login_doctor.php" method="POST" class="form-container">
+        <div class="input-group">
+            <label for="doctor_name">Name</label>
+            <input type="text" id="doctor_name" name="doctor_name" placeholder="Name" required>
+        </div>
+        <div class="input-group">
+            <label for="doctor_password">Password</label>
+            <input type="password" id="doctor_password" name="doctor_password" placeholder="Password" required>
+        </div>
+        <div id="error_message" style="color: red;">
+            <?php if (isset($error_message)) echo htmlspecialchars($error_message); ?>
+        </div>
+        <button type="submit" class="login-button">Login</button>
+    </form>
+    <footer>
+        <p>Clinic Registration System © 2024</p>
+    </footer>
+</body>
+
+</html>

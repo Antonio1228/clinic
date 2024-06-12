@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Clinic Login</title>
+    <link rel="stylesheet" href="login_styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Clinic Login</h1>
+    </header>
+    <form action="login_clinic.php" method="POST" class="form-container">
+        <div class="input-group">
+            <label for="clinic_name">Clinic Name</label>
+            <input type="text" id="clinic_name" name="clinic_name" placeholder="Clinic Name" required>
+        </div>
+        <div class="input-group">
+            <label for="clinic_password">Password</label>
+            <input type="password" id="clinic_password" name="clinic_password" placeholder="Password" required>
+        </div>
+        <div id="error_message" style="color: red;">
+            <?php if (isset($error_message)) echo htmlspecialchars($error_message); ?>
+        </div>
+        <button type="submit" class="login-button">Login</button>
+    </form>
+    <footer>
+        <p>Clinic Registration System © 2024</p>
+    </footer>
+</body>
+
+</html>

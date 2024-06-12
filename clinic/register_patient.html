@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Register as Patient</title>
+    <link rel="stylesheet" href="register_styles.css">
+    <script>
+        function validateForm() {
+            var patientId = document.getElementById("patient_id").value;
+            var username = document.getElementById("patient_username").value;
+            var password = document.getElementById("patient_password").value;
+
+            var idPattern = /^[A-Z]\d{9}$/;
+            if (!idPattern.test(patientId)) {
+                alert("Patient ID must be one uppercase letter followed by 9 digits.");
+                return false;
+            }
+
+            if (username.length < 3) {
+                alert("Username must be at least 3 characters long.");
+                return false;
+            }
+
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Register as Patient</h1>
+    </header>
+    <form action="register_patient.php" method="POST" class="form-container" onsubmit="return validateForm()">
+        <div class="input-group">
+            <label for="patient_id">Patient ID</label>
+            <input type="text" id="patient_id" name="patient_id" placeholder="Patient ID" required>
+        </div>
+        <div class="input-group">
+            <label for="patient_name">Full Name</label>
+            <input type="text" id="patient_name" name="patient_name" placeholder="Full Name" required>
+        </div>
+        <div class="input-group">
+            <label for="patient_username">Username</label>
+            <input type="text" id="patient_username" name="patient_username" placeholder="Username" required>
+        </div>
+        <div class="input-group">
+            <label for="patient_email">Email</label>
+            <input type="email" id="patient_email" name="patient_email" placeholder="Email" required>
+        </div>
+        <div class="input-group">
+            <label for="patient_password">Password</label>
+            <input type="password" id="patient_password" name="patient_password" placeholder="Password" required>
+        </div>
+        <div class="input-group">
+            <label for="patient_gender">Gender</label>
+            <select id="patient_gender" name="patient_gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="patient_birth_date">Birth Date</label>
+            <input type="date" id="patient_birth_date" name="patient_birth_date" placeholder="Birth Date">
+        </div>
+        <div class="input-group">
+            <label for="patient_age">Age</label>
+            <input type="number" id="patient_age" name="patient_age" placeholder="Age">
+        </div>
+        <div class="input-group">
+            <label for="patient_phone">Phone Number</label>
+            <input type="text" id="patient_phone" name="patient_phone" placeholder="Phone Number">
+        </div>
+        <div class="input-group">
+            <label for="patient_address">Address</label>
+            <input type="text" id="patient_address" name="patient_address" placeholder="Address">
+        </div>
+        <button type="submit" class="register-button">Register</button>
+    </form>
+    <footer>
+        <p>Clinic Registration System © 2024</p>
+    </footer>
+</body>
+
+</html>

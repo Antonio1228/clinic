@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Select User Type</title>
+    <link rel="stylesheet" href="selectType_styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Please select your user type:</h1>
+    </header>
+    <div class="button-container">
+        <button onclick="redirectTo('patient')">Patient</button>
+        <button onclick="redirectTo('clinic')">Clinic</button>
+        <button onclick="redirectTo('doctor')">Doctor</button>
+    </div>
+    <script>
+        function redirectTo(userType) {
+            const actionType = new URLSearchParams(window.location.search).get('action');
+            window.location.href = `${actionType}_${userType}.html`;
+        }
+    </script>
+</body>
+
+</html>

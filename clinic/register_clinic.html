@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Register as Clinic</title>
+    <link rel="stylesheet" href="register_styles.css">
+    <script>
+        function validateForm() {
+            var password = document.getElementById("clinic_password").value;
+
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Register as Clinic</h1>
+    </header>
+    <form action="register_clinic.php" method="POST" class="form-container" onsubmit="return validateForm()">
+        <div class="input-group">
+            <label for="clinic_name">Clinic Name</label>
+            <input type="text" id="clinic_name" name="clinic_name" placeholder="Clinic Name" required>
+        </div>
+        <div class="input-group">
+            <label for="clinic_password">Password</label>
+            <input type="password" id="clinic_password" name="clinic_password" placeholder="Password" required>
+        </div>
+        <div class="input-group">
+            <label for="clinic_phone">Phone Number</label>
+            <input type="text" id="clinic_phone" name="clinic_phone" placeholder="Phone Number" required>
+        </div>
+        <div class="input-group">
+            <label for="clinic_address">Address</label>
+            <input type="text" id="clinic_address" name="clinic_address" placeholder="Address" required>
+        </div>
+        <div class="input-group">
+            <label for="clinic_department">Department</label>
+            <input type="text" id="clinic_department" name="clinic_department" placeholder="Department" required>
+        </div>
+        <button type="submit" class="register-button">Register</button>
+    </form>
+    <footer>
+        <p>Clinic Registration System © 2024</p>
+    </footer>
+</body>
+
+</html>
